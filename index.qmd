@@ -1,0 +1,101 @@
+---
+editor: visual
+format: 
+  html:
+    page-layout: full
+    pagetitle: Le muse girovaghe
+---
+
+```{=html}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presto Online</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+
+        /* Sfondo a pieno schermo */
+        body {
+            background-image: url('images/monserrat-01896_x_sito.jpg'); /* Sostituisci con il percorso reale della tua immagine */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* sfondo semi-trasparente */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: rgba(100, 100, 100, 0.9); /* sfondo semi-trasparente */
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .counter {
+            font-size: 36px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Le muse girovaghe
+    <h2>fate piano sto sognando</h2>
+    <div class="counter" id="countdown"></div>
+    <p> Venite a scoprire tutte le date su questo sito</p>
+</div>
+
+<script>
+    // Imposta la data di apertura del sito
+    var apertura = new Date("01 31, 2025 00:00:00").getTime();
+
+    // Aggiorna il conto alla rovescia ogni secondo
+    var x = setInterval(function() {
+
+        // Ottieni la data e l'ora attuale
+        var now = new Date().getTime();
+
+        // Trova la distanza tra adesso e la data di apertura
+        var distanza = apertura - now;
+
+        // Calcola i giorni che mancano
+        var giorni = Math.floor(distanza / (1000 * 60 * 60 * 24));
+
+        // Se il countdown è finito, mostra un messaggio diverso
+        if (distanza < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "Sito ora online!";
+        } else {
+            document.getElementById("countdown").innerHTML =  giorni + " giorni  <br> al nuovo tour ";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
+```
