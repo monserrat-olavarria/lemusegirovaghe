@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Le muse girovaghe</title>
+<title>Le muse Girovaghe – Le muse girovaghe</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,11 +24,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -40,11 +43,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-46973a6777cfe1ce59315eec6f9064bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -66,122 +69,180 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Le muse girovaghe</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://monserrat.olavarria.it"> 
+<span class="menu-text">Monserrat Olavarria Balmaceda</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./corsi.html"> 
+<span class="menu-text">Per le scuole</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./spettacoli.html"> 
+<span class="menu-text">Spettacoli</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> 
+<span class="menu-text">Contatti</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Le muse Girovaghe</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#chi-siamo" id="toc-chi-siamo" class="nav-link active" data-scroll-target="#chi-siamo">Chi siamo</a></li>
+  </ul>
+</nav>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Le muse girovaghe
-    </h1></header>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presto Online</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0%;
-            box-sizing: border-box;
-        }
-
-        body, html {
-            height: 100%;
-            font-family: 'Arial', sans-serif;
-            color: white;
-        }
-
-        /* Sfondo a pieno schermo */
-        body {
-            background-image: url('images/monserrat-01896_x_sito.jpg'); /* Sostituisci con il percorso reale della tua immagine */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.5); /* sfondo semi-trasparente */
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        h1 {
-            font-size: 60px;
-            margin-bottom: 20px;
-            color: rgba(100, 100, 100, 0.9); /* sfondo semi-trasparente */
-        }
-
-        h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .counter {
-            font-size: 36px;
-            font-weight: bold;
-        }
-    </style>
+<p>Le Muse Girovaghe sono una compagnia di artisti, educatori e formatori. Il gruppo si occupa di portare la musica, il teatro, la scrittura, la danza, l’espressione corporea, le arti figurative e tutte le loro possibili commistioni e declinazioni a persone di tutte le età in spazi convenzionali e non convenzionali.&nbsp;</p>
+<p>Produciamo concerti, lezioni concerto, spettacoli e mostre per bambini e adulti.&nbsp;</p>
+<p>In ambito educativo proponiamo percorsi laboratoriali e formativi, per scuole di ogni ordine e grado, aziende e gruppi, operando secondo i principi del <em>cooperative learning</em> e del <em>lifelong learning</em>.</p>
+<p>I valori su cui si fonda il nostro lavoro sono la pace, la democrazia, la possibilità di ogni individuo di vivere una vita degna, autonoma, creativa ed inclusiva.</p>
+<section id="chi-siamo" class="level2">
+<h2 class="anchored" data-anchor-id="chi-siamo">Chi siamo</h2>
 
 
 
-<div class="container">
-    <h2 class="anchored">fate piano sto sognando</h2>
-    <div class="counter" id="countdown"></div>
-    <p> Venite a scoprire tutte le date su questo sito</p>
+</section>
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1777548605411" data-listing-reading-time-sort="3" data-listing-word-count-sort="428">
+<div class="thumbnail"><a href="./muse/monserrat.html" class="no-external">
+
+<p class="card-img-top"><img src="image/monserrat-02552.jpg"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./muse/monserrat.html" class="no-external">Monserrat Olavarria Balmaceda</a>
+</h3>
+<div class="delink listing-description"><a href="./muse/monserrat.html" class="no-external">
+Cantante, performer, educatrice musicale, insegnante di canto, scrittrice, illustratrice.
+</a></div>
 </div>
-
-<script>
-    // Imposta la data di apertura del sito
-    var apertura = new Date("01 31, 2025 00:00:00").getTime();
-
-    // Aggiorna il conto alla rovescia ogni secondo
-    var x = setInterval(function() {
-
-        // Ottieni la data e l'ora attuale
-        var now = new Date().getTime();
-
-        // Trova la distanza tra adesso e la data di apertura
-        var distanza = apertura - now;
-
-        // Calcola i giorni che mancano
-        var giorni = Math.floor(distanza / (1000 * 60 * 60 * 24));
-
-        // Se il countdown è finito, mostra un messaggio diverso
-        if (distanza < 0) {
-            clearInterval(x);
-            document.getElementById("countdown").innerHTML = "Sito ora online!";
-        } else {
-            document.getElementById("countdown").innerHTML =  giorni + " giorni  <br> al nuovo tour ";
-        }
-    }, 1000);
-</script>
-
-
-
-
-
-
-</main> <!-- /main -->
+<div class="metadata">
+<a href="./muse/monserrat.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

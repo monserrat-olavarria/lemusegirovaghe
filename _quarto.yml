@@ -4,11 +4,16 @@ project:
 
 website:
   title: "Le muse girovaghe"
-#  navbar:
-#    left:
-#      - href: index.qmd
-#        text: Home
-#      - about.qmd
+  navbar:
+    right:
+      - text: Monserrat Olavarria Balmaceda
+        href: https://monserrat.olavarria.it
+      - text: Per le scuole
+        href: corsi.qmd
+      - text: Spettacoli
+        href: spettacoli.qmd
+      - text: Contatti
+        href: contact.qmd
 
 format:
   html:
