@@ -1,0 +1,32 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/muse/monserrat.html"
+    ]
+  },
+  {
+    "listing": "/spettacoli.html",
+    "items": [
+      "/spettacoli/canciones.html",
+      "/spettacoli/avenidamerica_disco.html",
+      "/spettacoli/avenidamerica.html",
+      "/spettacoli/foto_canti_agilla/index.html",
+      "/spettacoli/sciamanici.html",
+      "/spettacoli/canti_argilla_presentazione/index.html",
+      "/spettacoli/instrumental.html",
+      "/spettacoli/canti_argilla.html"
+    ]
+  },
+  {
+    "listing": "/corsi.html",
+    "items": [
+      "/corsi/primipassi-cantando.html",
+      "/corsi/storie-di-parole.html",
+      "/corsi/cantautori.html",
+      "/corsi/unmondodivoci.html",
+      "/corsi/tiritinlalla.html",
+      "/corsi/giochi_in_musica.html"
+    ]
+  }
+]
